@@ -7,6 +7,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 /*Atribuir às variáveis os valores, nomes e horas dos ficheiros*/
+##OLA
 
 $valor_temperatura = file_get_contents("api/files/temperatura/valor.txt");
 $hora_temperatura = file_get_contents("api/files/temperatura/hora.txt");
