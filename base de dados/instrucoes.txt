@@ -1,0 +1,1 @@
+Criar a base de dados com o nome "smartstorage_db" e importar o ficheiro login.sql

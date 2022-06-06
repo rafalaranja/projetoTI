@@ -1,0 +1,72 @@
+h1{
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  
+  p{
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+.container{
+    padding-bottom: 20px;
+  }
+
+.bg-primary{
+    background: linear-gradient(90deg, #0d6efd 0%, #0d6efd 35%, rgba(0,212,255,1) 100%);
+}
+
+
+.botao 
+{
+    outline: 0;
+    font-family: 'Lucida Console';
+    color: white;
+    background: linear-gradient(90deg, #0d6efd 0%, #0d6efd 35%, rgba(0,212,255,1) 100%);
+    border: none;
+}
+
+.botao:hover {
+    outline: 0;
+    color: white;
+    background-color: rgb(226, 55, 55);
+    border-radius: 0px;
+    border-color: rgb(226, 55, 55);
+}
+
+.botao:focus {
+    outline: 0;
+}
+
+
+h5{
+    text-align: center;
+}
+
+.imagem{
+    width: 180px;
+    height: 180px;
+    align-self: center;
+}
+
+.rodape{
+    text-align: center;
+    color: white;
+    position:relative;
+    background-color: red;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+
+
+.texto{
+    text-align: center;
+}
+
+
+.texto-sobre{
+    text-align: center;
+    padding: 50px;
+    padding-top: 100px;
+    padding-bottom: 25px;
+}

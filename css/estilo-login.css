@@ -1,0 +1,99 @@
+body {
+    background-repeat: no-repeat;
+    background-image: url("../imagens/armazem.png");
+    background-size: cover;
+}
+
+.container{
+    padding-bottom: 20px;
+}
+
+.login-form {
+    width: 650px;
+    height: 70vh;
+    margin: 12.5vh auto;
+    padding: 40px 0px;
+    background-color: white;
+    box-shadow: 0px 0px 14px -3px #000000;
+}
+
+.tit {
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+    font-size: 50px;
+    font-family: 'Lucida Console';
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.dados {
+    display: block;
+    margin: auto;
+    outline: none;
+    width: 70%;
+    height: 55px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    font-size: 120%;
+    font-family: 'Lucida Console';
+    font-weight: none;
+    color: black;
+    background-color: #E5E5E5;
+    border: none;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.35);
+
+}
+
+
+.botao {
+    outline: 0;
+    display: block;
+    width: 70%;
+    height: 50px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 25px;
+    font-family: 'Lucida Console';
+    color: white;
+    background: linear-gradient(90deg, #0d6efd 0%, #0d6efd 35%, rgba(0,212,255,1) 100%);
+    border: none;
+
+}
+
+.errou{
+    text-align: center;
+    color:red;
+    font-family: 'Lucida Console';
+    font-size: 30px;
+    margin-top: 90px;
+    margin: auto;
+    margin-bottom: 60px;
+    background-color: rgba(250, 128, 114, 0.4);
+    border: 1px solid rgb(165, 42, 42);
+
+}
+
+.botao:hover {
+    outline: 0;
+    color: white;
+    background-color: rgb(226, 55, 55);
+    border-radius: 0px;
+    border-color: rgb(226, 55, 55);
+}
+
+.botao:focus {
+    outline: 0;
+}
+
+.falha{
+    width: 380px;
+    text-align: center;
+    margin: 20px auto 0%;
+    padding: 10px;
+    background-color: rgba(250, 128, 114, 0.4);
+    border: 1px solid rgb(165, 42, 42);
+}

@@ -1,0 +1,113 @@
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+h1{
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+p{
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.container{
+  padding-bottom: 20px;
+}
+
+.btnEntrar {
+  width: 100%;
+  padding: 10px 0px;
+  font-size: 25px;
+  font-family: 'Lucida Console';
+  color: white;
+  background: linear-gradient(90deg, #0d6efd 0%, #0d6efd 35%, rgba(0,212,255,1) 100%);
+  border: none;
+  border-radius: 5px;
+}
+
+.login-form {
+  width: 650px;
+  height: 80vh;
+  margin: 10vh auto;
+  padding: 40px 0px;
+  background-color: white;
+  box-shadow: 0px 0px 14px -3px #000000;
+}
+
+.tit {
+  display: block;
+  margin: auto;
+  margin-bottom: 50px;
+  font-size: 68px;
+  font-family: 'Lucida Console';
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  text-shadow: 4px 0px #0d6efd;
+}
+
+.dados {
+  display: block;
+  margin: auto;
+  outline: none;
+  width: 70%;
+  height: 55px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  font-size: 120%;
+  font-family: 'Lucida Console';
+  font-weight: none;
+  color: black;
+  background-color: #E5E5E5;
+  border: none;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.35);
+  transition: border 0.2s;
+}
+
+.criar {
+  margin-left: 15%;
+  padding: 0px 0px;
+  font-size: 115%;
+  font-family: 'Lucida Console';
+  color: black;
+}
+
+.aqui {
+  color: #1f53c5;
+  text-decoration: none;
+}
+
+.aqui:hover {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.submeter {
+  outline: 0;
+  display: block;
+  width: 70%;
+  height: 50px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 25px;
+  font-family: 'Lucida Console';
+  color: white;
+  background: linear-gradient(90deg, #0d6efd 0%, #0d6efd 35%, rgba(0,212,255,1) 100%);
+  border: none;
+  transition: width 0.7s, background-color 0.3s, border-radius 0.4s;
+}
+
+.submeter:hover {
+  outline: 0;
+  color: white;
+  background-color: rgb(226, 55, 55);
+  border-radius: 0px;
+  border-color: rgb(226, 55, 55);
+}
+
+.submeter:focus {
+  outline: 0;
+}

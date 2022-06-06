@@ -1,0 +1,14 @@
+CONTAS no na base de dados(MYSQL) --> localhost/phpmyadmin
+
+
+user : paulo
+pass : 12345
+type : 0 (cliente)
+
+user : fernando
+pass : 12345
+type : 1 (funcionario)
+
+user : pedro
+pass : pedrao
+type : 2 (administrador)
