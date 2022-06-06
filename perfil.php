@@ -22,7 +22,6 @@ if (!isset($_SESSION['username'])) {
 <!--<meta http-equiv="refresh" content="5">-->
 
 <body>
-
     <!--Barra de navegação lateral com opção histórico e dashboard-->
 
     <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidenav">
@@ -92,7 +91,6 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
         </div>
-
     </div>
 
 
