@@ -86,13 +86,8 @@ $nome_coluna = file_get_contents("../api/files/coluna/nome.txt");
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="dashboard_func.php" class="nav-link active">
+                <a href="dashboard_cliente.php" class="nav-link active">
                     Dashboard
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="historico_func.php" class="nav-link text-white">
-                    Histórico
                 </a>
             </li>
         </ul>
@@ -100,11 +95,11 @@ $nome_coluna = file_get_contents("../api/files/coluna/nome.txt");
         <!--Janela flutuante para sair da conta-->
         <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../imagens/user-foto/funcionario.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <img src="../imagens/user-foto/cliente.png" alt="" width="32" height="32" class="rounded-circle me-2">
                 <strong> <?php echo $_SESSION["username"] ?></strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="perfil_func.php">Ver Perfil</a></li>
+                <li><a class="dropdown-item" href="perfil_cliente.php">Ver Perfil</a></li>
                 <li><a class="dropdown-item" href="../logout.php">Sair da Conta</a></li>
             </ul>
         </div>

@@ -25,6 +25,13 @@ function guardador_imagem($file) {
             echo "Não Movido";
         }
     }
+    elseif($_SESSION['type'] == 0){
+        if(move_uploaded_file($file,'imagens/user-foto/cliente.png')){
+            echo "Movido com sucesso";
+        }else{
+            echo "Não Movido";
+        }
+    }
     else{
         echo 'ERRO';
     }
@@ -44,6 +51,9 @@ if ($request == "POST") {
             }
             elseif($_SESSION['type'] == 2){
                 header('Location: perfil.php');
+            }
+            elseif($_SESSION['type'] == 0){
+                header('Location: website_cliente/perfil_cliente.php');
             }
         
         }else{

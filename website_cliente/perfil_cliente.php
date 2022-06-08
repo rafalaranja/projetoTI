@@ -30,13 +30,8 @@ if (!isset($_SESSION['username'])) {
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="dashboard_func.php" class="nav-link text-white">
+                <a href="dashboard_cliente.php" class="nav-link text-white">
                     Dashboard
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="historico_func.php" class="nav-link text-white">
-                    Histórico
                 </a>
             </li>
         </ul>
@@ -44,11 +39,11 @@ if (!isset($_SESSION['username'])) {
         <!--Janela flutuante para sair da conta-->
         <div class="dropdown">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../imagens/user-foto/funcionario.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <img src="../imagens/user-foto/cliente.png" alt="" width="32" height="32" class="rounded-circle me-2">
                 <strong> <?php echo $_SESSION["username"] ?></strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="perfil_func.php">Ver Perfil</a></li>
+                <li><a class="dropdown-item" href="perfil_cliente.php">Ver Perfil</a></li>
                 <li><a class="dropdown-item" href="../logout.php">Sair da Conta</a></li>
             </ul>
         </div>
@@ -60,7 +55,7 @@ if (!isset($_SESSION['username'])) {
         <div class="card card-perfil">
             <div class="row no-gutters">
                 <div class="col-sm-5">
-                    <img class="perfil" src="../imagens/user-foto/funcionario.png" alt="Avatar">
+                    <img class="perfil" src="../imagens/user-foto/cliente.png" alt="Avatar">
                 </div>
                 <div class="col-sm-7">
                     <div class="card-body">
