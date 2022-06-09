@@ -4,9 +4,12 @@ import sys
 
 
 try:
-    x=1
+    x=0
     while (KeyboardInterrupt != 0):
-        x=x+1
+        if(x != 15):            #LIMITE DE 10 FOTOS (AO FINAL DE GUARDAR 10 FOTOS COMEÇA A GRAVAR POR CIMA DAS EXISTENTES)
+            x=x+1
+        else:
+            x=1
         camera = cv.VideoCapture(0, cv.CAP_DSHOW)
         ret, image = camera.read()
         if (ret == 1):

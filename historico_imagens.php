@@ -71,24 +71,23 @@ if (!isset($_SESSION['username'])) {
             <div class="row">
                 <!-- -->
                 <?php 
-                    for ($i = 1; $i <= 10; $i++) {
-                        /*
-                        echo '<div class='col-sm-4 cartao'>
+                    for ($i = 1; $i <= 15; $i++) {
+                        echo "<div class='col-sm-4 cartao'>
                                 <div class='card '>
-                                    <div class="card-header">
-                                        <div class="text-center">
-                                            <p><b>Foto 1</b></p>
+                                    <div class='card-header'>
+                                        <div class='text-center'>
+                                            <p><b>Foto $i</b></p>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                      <div class="text-center">
-                                         <a target="_blank" href="python/'$i'.jpg">
-                                         <img class="galeria" src="python/'$i'.jpg" alt="foto1">
+                                    <div class='card-body'>
+                                      <div class='text-center'>
+                                         <a target='_blank' href='python/webcam$i.jpg'>
+                                         <img class='galeria' src='python/webcam$i.jpg' alt='foto1'>
                                          </a>
                                         </div>
                                     </div>
                                 </div>
-                             </div>'; */
+                             </div>"; 
                     } 
                 ?>
             <!-- --> 
