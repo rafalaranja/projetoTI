@@ -84,7 +84,7 @@ if (!isset($_SESSION['username'])) {
                         } ?></p>
                     <form action="upload.php" method="post" enctype="multipart/form-data">
                     <p class="card-text alterar">Alterar foto de perfil:</p>
-                    <input type="file" name="imagem" id="imagem" accept=".png, .gif, .jpg, .jpeg">
+                    <input type="file" name="imagem" id="imagem" accept=".png, .jpg">
                     <input type="submit" value="Submeter" name="submit">
                     </form>
                     </div>

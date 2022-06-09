@@ -46,6 +46,22 @@ if ($request == "POST") {
         echo("<br>"."Tamanho: ".$_FILES["imagem"]["size"]);
         echo("<br>"."Pasta temporária: ".$_FILES["imagem"]["tmp_name"]."<br>");
         guardador_imagem($_FILES["imagem"]["tmp_name"]);
+       /* if(isset($_FILES['imagem']['size'])) {              // VERIFICA SE A VARIAVEL (IMAGEM) TRAS ALGUMA INFORMAÇÃO
+
+            $arquivo = $_FILES['imagem'];
+    
+            $arquivoNovo = explode('.',$arquivo['name']);
+    
+            /*
+            //Verifica se o arquivo é no formato pretendido (png e jpg)
+            if ($arquivoNovo[sizeof($arquivoNovo)-1] != 'jpg' && $arquivoNovo[sizeof($arquivoNovo)-1] != 'png'){
+                die('O tipo de arquivo inserido não é permitido por favor insira um ficheiro .jpg ou .png');
+    
+            // Verifica se o tamanho não excede o limite pretendido (1000 Kb)
+            }else if($_FILES['imagem']['size'] > 1000000){
+                die('O arquivo inserido tem mais de 1000kB por favor insira outro ficheiro ');
+            }
+            else{*/
             if($_SESSION['type'] == 1){
                 header('Location: website_funcionario/perfil_func.php');
             }
@@ -56,7 +72,7 @@ if ($request == "POST") {
                 header('Location: website_cliente/perfil_cliente.php');
             }
         
-        }else{
+            }else{
 
             echo ("erro");
         }
