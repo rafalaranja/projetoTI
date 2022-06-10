@@ -1,4 +1,3 @@
-from re import X
 import cv2 as cv
 import sys
 
@@ -17,6 +16,7 @@ try:
           print ("Resultado da Camera=" + str(ret))
           foto = str(resultado) + ".jpg"
           cv.imwrite(foto, image)
+          #move_file()
           #cv.imshow('Imagem', image)
           #cv.waitKey(3000)
           camera.release()

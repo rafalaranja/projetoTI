@@ -81,11 +81,18 @@ if (!isset($_SESSION['username'])) {
                                     </div>
                                     <div class='card-body'>
                                       <div class='text-center'>
-                                         <a target='_blank' href='python/webcam$i.jpg'>
-                                         <img class='galeria' src='python/webcam$i.jpg' alt='foto1'>
+                                         <a target='_blank' href='api/files/webcam/historico/webcam$i.jpg'>
+                                         <img class='galeria' src='api/files/webcam/historico/webcam$i.jpg' alt='foto1'>
                                          </a>
                                         </div>
                                     </div>
+                                    <div class='card-footer'>
+                                    <div class='text-center'>
+                                        <p><b>"; 
+                                        echo "Data: ".date("F d Y H:i:s.", filemtime("api/files/webcam/historico/webcam$i.jpg"));
+                                    echo "</b> </p>
+                                    </div>
+                                </div>
                                 </div>
                              </div>"; 
                     } 
