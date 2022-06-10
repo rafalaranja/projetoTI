@@ -64,7 +64,7 @@ include('connection.php');
                         $_SESSION['username'] = $_POST['username'];
                         $_SESSION['type'] = $row['type'];
                         if($row['type'] == 0) {
-                            echo'<h2 class="errou" >Clientes não tem acesso ao dashbord</h2>';
+                            header('location: website_cliente/dashboard_cliente.php');
                         } elseif($row['type'] == 1) {
                             header('location: website_funcionario/dashboard_func.php');
                         } else{

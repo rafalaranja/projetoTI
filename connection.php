@@ -1,7 +1,7 @@
 <?php      
     $host = "localhost";  
     $user = "root";  
-    $password = 'root'; // CASO UTILIZE XAMPP COLOQUE $password = '' ou insira a password que utilizar (caso tenha alterado);  
+    $password = ''; // CASO UTILIZE UniServer COLOQUE $password = 'root' ou insira a password que utilizar (caso tenha alterado);  
     $db_name = "smartstorage_db";  
       
     $con = mysqli_connect($host, $user, $password, $db_name);  

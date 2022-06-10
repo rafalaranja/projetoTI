@@ -69,54 +69,28 @@ if (!isset($_SESSION['username'])) {
     <div class="main">
     <div class="container">
             <div class="row">
-                <div class="col-sm-4 cartao">
-                    <div class="card ">
-                        <div class="card-header">
-                            <div class="text-center">
-                                <p><b>Foto 1</b></p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="text-center">
-                                <a target="_blank" href="python/1.png">
-                                <img class="galeria" src="python/1.png" alt="foto1">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 cartao">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="text-center">
-                                <p><b>Foto 2</b></p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="text-center">
-                                <a target="_blank" href="python/2.png">
-                                <img class="galeria" src="python/2.png" alt="foto2">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 cartao">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="text-center">
-                                <p><b>Foto 3</b></p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="text-center">
-                                <a target="_blank" href="python/3.jpg">
-                                <img class="galeria" src="python/3.jpg" alt="foto3">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- -->
+                <?php 
+                    for ($i = 1; $i <= 15; $i++) {
+                        echo "<div class='col-sm-4 cartao'>
+                                <div class='card '>
+                                    <div class='card-header'>
+                                        <div class='text-center'>
+                                            <p><b>Foto $i</b></p>
+                                        </div>
+                                    </div>
+                                    <div class='card-body'>
+                                      <div class='text-center'>
+                                         <a target='_blank' href='python/webcam$i.jpg'>
+                                         <img class='galeria' src='python/webcam$i.jpg' alt='foto1'>
+                                         </a>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>"; 
+                    } 
+                ?>
+            <!-- --> 
             </div>
         </div>
     </div>

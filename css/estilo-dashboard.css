@@ -165,5 +165,6 @@ a{
 }
 
 .galeria:hover {
-  border: 1px solid #777;
+  border: 5px solid #777;
+  background-color: #0d6efd;
 }
