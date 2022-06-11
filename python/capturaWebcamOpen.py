@@ -15,15 +15,14 @@ try:
           resultado = "webcam" + str(x)
           print ("Resultado da Camera=" + str(ret))
           foto = str(resultado) + ".jpg"
-          cv.imwrite(foto, image)
-          #move_file()
-          #cv.imshow('Imagem', image)
-          #cv.waitKey(3000)
+          foto_recente = "foto_recente.jpg"
+          cv.imwrite(f'../api/files/webcam/historico/{foto}', image)
+          cv.imwrite(f'../api/files/webcam/recente/{foto_recente}', image)
           camera.release()
           cv.destroyAllWindows()
         else:
             print("Erro")
-        cv.waitKey(5000)
+        cv.waitKey(3000)
 except KeyboardInterrupt: # caso haja interrupção de teclado CTRL+C
 
     print( "Programa terminado pelo utilizador")
