@@ -116,31 +116,36 @@ if (isset($_POST["sensores"])) {
         switch($_POST["sensores"]){
             case "humidade":
                 echo '
-                <canvas class="line-chart graficos"></canvas>
-            
+                <div class="resize-grafico">
+                <canvas class="pie-chart graficos"></canvas>
+                </div>
+
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
             
                 <script>
-                    var ctx = document.getElementsByClassName("line-chart");
+                    var ctx = document.getElementsByClassName("pie-chart");
             
                  // parametros sao : type, data e options
                  var chartGraph = new Chart(ctx, {
-                     type: "line",
+                     type: "pie",
                      data:{
-                         labels: ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez",],
+                         labels: ["Ativado","Desativado","Erro",],
                          datasets: [{
                              label:"HUMIDADE",
-                             data: [20,30,10,35,4,82,99,23,80,70,90,23],
-                             borderWidth: 4,
-                             borderColor: "#0d6efd",
-                             backgroundColor: "transparent"
+                             data: [200,300,25],
+                             backgroundColor: [
+                                "rgb(54, 162, 235)",
+                                "rgb(255, 99, 132)",
+                                "rgb(255, 205, 86)"
+                              ],
                          }]
                      },
                      options: {
+                        maintainAspectRatio: false,
                          title: {
                              display: true,
                              fontSize: 30,
-                             text: "Humidade média mensal"
+                             text: "Humidade"
                          },
                          labels: {
                              fontStyle: "bold"
@@ -152,31 +157,36 @@ if (isset($_POST["sensores"])) {
                 break;
             case "temperatura":
                 echo '
-                <canvas class="line-chart graficos"></canvas>
-            
+                <div class="resize-grafico">
+                <canvas class="pie-chart graficos"></canvas>
+                </div>
+
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
             
                 <script>
-                    var ctx = document.getElementsByClassName("line-chart");
+                    var ctx = document.getElementsByClassName("pie-chart");
             
                  // parametros sao : type, data e options
                  var chartGraph = new Chart(ctx, {
-                     type: "line",
+                     type: "pie",
                      data:{
-                         labels: ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez",],
+                         labels: ["Ativado","Desativado","Erro",],
                          datasets: [{
-                             label:"TEMPERATURA",
-                             data: [5,12,23,35,3,32,29,43,20,10,8,1],
-                             borderWidth: 4,
-                             borderColor: "#0d6efd",
-                             backgroundColor: "transparent"
+                             label:"HUMIDADE",
+                             data: [200,300,25],
+                             backgroundColor: [
+                                "rgb(54, 162, 235)",
+                                "rgb(255, 99, 132)",
+                                "rgb(255, 205, 86)"
+                              ],
                          }]
                      },
                      options: {
+                        maintainAspectRatio: false,
                          title: {
                              display: true,
                              fontSize: 30,
-                             text: "Temperatura média mensal"
+                             text: "Humidade"
                          },
                          labels: {
                              fontStyle: "bold"
@@ -188,31 +198,36 @@ if (isset($_POST["sensores"])) {
                 break;
                 case "balanca":
                     echo '
-                    <canvas class="line-chart graficos"></canvas>
-                
+                    <div class="resize-grafico">
+                    <canvas class="pie-chart graficos"></canvas>
+                    </div>
+    
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
                 
                     <script>
-                        var ctx = document.getElementsByClassName("line-chart");
+                        var ctx = document.getElementsByClassName("pie-chart");
                 
                      // parametros sao : type, data e options
                      var chartGraph = new Chart(ctx, {
-                         type: "line",
+                         type: "pie",
                          data:{
-                             labels: ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez",],
+                             labels: ["Ativado","Desativado","Erro",],
                              datasets: [{
-                                 label:"BALANÇA",
-                                 data: [4000,5000,10000,2000,1000,20000,10000,43000,20000,10000,8000,10000],
-                                 borderWidth: 4,
-                                 borderColor: "#0d6efd",
-                                 backgroundColor: "transparent"
+                                 label:"HUMIDADE",
+                                 data: [200,300,25],
+                                 backgroundColor: [
+                                    "rgb(54, 162, 235)",
+                                    "rgb(255, 99, 132)",
+                                    "rgb(255, 205, 86)"
+                                  ],
                              }]
                          },
                          options: {
+                            maintainAspectRatio: false,
                              title: {
                                  display: true,
                                  fontSize: 30,
-                                 text: "Peso médio mensal"
+                                 text: "Humidade"
                              },
                              labels: {
                                  fontStyle: "bold"
@@ -224,31 +239,36 @@ if (isset($_POST["sensores"])) {
                     break;
                     case "luminosidade":
                         echo '
-                        <canvas class="line-chart graficos"></canvas>
-                    
+                        <div class="resize-grafico">
+                        <canvas class="pie-chart graficos"></canvas>
+                        </div>
+        
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
                     
                         <script>
-                            var ctx = document.getElementsByClassName("line-chart");
+                            var ctx = document.getElementsByClassName("pie-chart");
                     
                          // parametros sao : type, data e options
                          var chartGraph = new Chart(ctx, {
-                             type: "line",
+                             type: "pie",
                              data:{
-                                 labels: ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez",],
+                                 labels: ["Ativado","Desativado","Erro",],
                                  datasets: [{
-                                     label:"LUMINOSIDADE",
-                                     data: [30,20,23,35,3,32,99,93,80,20,28,1],
-                                     borderWidth: 4,
-                                     borderColor: "#0d6efd",
-                                     backgroundColor: "transparent"
+                                     label:"HUMIDADE",
+                                     data: [200,300,25],
+                                     backgroundColor: [
+                                        "rgb(54, 162, 235)",
+                                        "rgb(255, 99, 132)",
+                                        "rgb(255, 205, 86)"
+                                      ],
                                  }]
                              },
                              options: {
+                                maintainAspectRatio: false,
                                  title: {
                                      display: true,
                                      fontSize: 30,
-                                     text: "Luminosidade média mensal"
+                                     text: "Humidade"
                                  },
                                  labels: {
                                      fontStyle: "bold"

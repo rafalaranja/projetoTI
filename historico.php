@@ -100,7 +100,7 @@ if (isset($_POST["sensores"])) {
                     <option value="humidade">Humidade</option>
                     <option value="fumo">Detetor de Fumo</option>
                     <option value="movimento">Detetor de Movimento</option>
-                    <option value="led">Led</option>
+                    <option value="luzes">Luzes</option>
                     <option value="ac">A/C</option>
                     <option value="rociador">Rociador</option>
                     <option value="alarme">Alarme</option>

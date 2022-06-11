@@ -37,13 +37,9 @@ $valor_movimento = file_get_contents("api/files/movimento/valor.txt");
 $hora_movimento = file_get_contents("api/files/movimento/hora.txt");
 $nome_movimento = file_get_contents("api/files/movimento/nome.txt");
 
-$valor_led = file_get_contents("api/files/led/valor.txt");
-$hora_led = file_get_contents("api/files/led/hora.txt");
-$nome_led = file_get_contents("api/files/led/nome.txt");
-
-$valor_led = file_get_contents("api/files/led/valor.txt");
-$hora_led = file_get_contents("api/files/led/hora.txt");
-$nome_led = file_get_contents("api/files/led/nome.txt");
+$valor_luzes = file_get_contents("api/files/luzes/valor.txt");
+$hora_luzes = file_get_contents("api/files/luzes/hora.txt");
+$nome_luzes = file_get_contents("api/files/luzes/nome.txt");
 
 $valor_ac = file_get_contents("api/files/ac/valor.txt");
 $hora_ac = file_get_contents("api/files/ac/hora.txt");
@@ -313,13 +309,13 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                     <div class="card">
                         <div class="card-header">
                             <div class="text-center">
-                                <p><b>Led: <?php if ($valor_led == "0") {
-                                                            echo "desligado";
-                                                        }else if($valor_led == "1"){
-                                                            echo "ligado";
+                                <p><b>Luzes: <?php if ($valor_luzes == "0") {
+                                                            echo "desligadas";
+                                                        }else if($valor_luzes == "1"){
+                                                            echo "ligadas";
                                                         } 
                                                         else {
-                                                            echo "Problema no led";
+                                                            echo "Problema nas luzes";
                                                         }
                                                         ?></b></p>
                             </div>
@@ -331,7 +327,7 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                         </div>
                         <div class="card-footer">
                             <div class="text-center">
-                                <p><b>Atualização: <?php echo $hora_led ?></b></p>
+                                <p><b>Atualização: <?php echo $hora_luzes ?></b></p>
                             </div>
                         </div>
                     </div>
@@ -408,9 +404,9 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                         <div class="card-body">
                             <div class="text-center">
                             <?php if ($valor_alarme == "1") {
-                                                            echo '<img class="icone" src="imagens/alarme_on.svg" alt="led_ligado">';
+                                                            echo '<img class="icone" src="imagens/alarme_on.svg" alt="alarme_ligado">';
                                                         }else{
-                                                            echo '<img class="icone" src="imagens/alarme_off.svg" alt="led_desligado">';}
+                                                            echo '<img class="icone" src="imagens/alarme_off.svg" alt="alarme_desligado">';}
                              ?>
                             </div>
                         </div>
@@ -439,9 +435,9 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                         <div class="card-body">
                             <div class="text-center">
                             <?php if ($valor_coluna == "1") {
-                                                            echo '<img class="icone" src="imagens/coluna_on.svg" alt="led_ligado">';
+                                                            echo '<img class="icone" src="imagens/coluna_on.svg" alt="col_ligado">';
                                                         }else{
-                                                            echo '<img class="icone" src="imagens/coluna_off.svg" alt="led_desligado">';}
+                                                            echo '<img class="icone" src="imagens/coluna_off.svg" alt="col_desligado">';}
                              ?>
                             </div>
                         </div>
@@ -467,7 +463,7 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                         </div>
                         <div class="card-footer">
                             <div class="text-center">
-                                <p><b>Atualização: <?php echo $hora_led ?></b></p>
+                                <p><b><?php echo "Atualização: ".date("F d Y H:i:s.", filemtime("api/files/webcam/recente/foto_recente.jpg")); ?></b></p>
                             </div>
                         </div>
                     </div>
@@ -627,22 +623,22 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                                     ?></td>
                             </tr>
                             <tr>
-                                <td>Led</td>
-                                <td><?php if ($valor_led == "1") {
-                                        echo "ligado";
-                                    } elseif($valor_led == "0")
+                                <td>Luzes</td>
+                                <td><?php if ($valor_luzes == "1") {
+                                        echo "ligadas";
+                                    } elseif($valor_luzes == "0")
                                     {
-                                        echo "desligado";
+                                        echo "desligadas";
                                     } 
                                     else {
-                                        echo "Problema no led";
+                                        echo "Problema nas luzes";
                                     }
                                     ?></td>
                                 </td>
-                                <td><?php echo $hora_led ?></td>
-                                <td><?php if ($valor_led == "1") {
+                                <td><?php echo $hora_luzes ?></td>
+                                <td><?php if ($valor_luzes == "1") {
                                             echo '<span class="badge rounded-pill bg-success">LIGADO</span>';
-                                        } elseif($valor_led == "0") {
+                                        } elseif($valor_luzes == "0") {
                                             echo '<span class="badge rounded-pill bg-danger">DESLIGADO</span>';
                                         }
                                             else {
