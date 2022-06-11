@@ -451,7 +451,7 @@ $nome_coluna = file_get_contents("../api/files/coluna/nome.txt");
                         </div>
                         <div class="card-body">
                             <div class="text-center">
-                            <img class="webcam" src="../python/webcam.jpg" alt="webcam">
+                            <img class="webcam" src="../api/files/webcam/recente/foto_recente.jpg" alt="webcam">
                             </div>
                         </div>
                         <div class="card-footer">
