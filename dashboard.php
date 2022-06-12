@@ -471,6 +471,41 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
             </div>
             </div>
         </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-sm-6 cartao">
+                <div class="card">
+                    <div class="card-header">
+                        <p><b>Painel de Controlo</b></p>
+                    </div>
+                    <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Porta</th>
+                                <th scope="col">Luzes</th>
+                                <th scope="col">Ar Condicionado</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                    <button type="button" class="btn btn-success">Abrir</button>
+                                    <button type="button" class="btn btn-danger">Fechar</button>
+                                    </td>
+                                    <td>
+                                    <button type="button" class="btn btn-success">Ligar</button>
+                                    <button type="button" class="btn btn-danger">Desligar</button>
+                                    </td>
+                                    <td>
+                                    <button type="button" class="btn btn-success">Ligar</button>
+                                    <button type="button" class="btn btn-danger">Desligar</button>
+                                    </td>
+                                </tr>
+                    </table>                                              
+                </div> 
+            </div>                                                   
+        </div>                                                    
 
 
         <!--Tabela com informações atuais dos sensores e respetivo estado-->
