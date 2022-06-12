@@ -7,13 +7,13 @@ if (!isset($_SESSION['username'])) {
 }
 
 
-/*Inicia o histórico com o sensor de luminosidade, e caso receba mais algum POST com outro sensor, atualiza e muda os dados para o sensor recebido*/
+/*Inicia o grafico com as luzes, e caso receba mais algum POST com outro sensor, atualiza e muda os dados para o sensor recebido*/
 if (isset($_POST["sensores"])) {
     $nomesensor = $_POST["sensores"];
 
     $ficheiro = file_get_contents("./api/files/" . $_POST["sensores"] . "/historico.txt");
 } else {
-    $_POST["sensores"] = "luminosidade";
+    $_POST["sensores"] = "luzes";
     $ficheiro = file_get_contents("./api/files/" . $_POST["sensores"] . "/historico.txt");
     $nomesensor = $_POST["sensores"];
     echo "ERRO!";
@@ -95,10 +95,9 @@ if (isset($_POST["sensores"])) {
                 </label>
                 <br><br>
                 <select class="selecionar form-select" name="sensores" id="sensores">
-                    <option value="balanca">Balança</option>
-                    <option value="temperatura">Temperatura</option>
-                    <option value="luminosidade" selected>Luminosidade</option>
-                    <option value="humidade">Humidade</option>
+                    <option value="portoes">Portão</option>
+                    <option value="movimento">Movimento</option>
+                    <option value="luzes" selected>luzes</option>
                 </select>
                 <br><br>
                 <input class="botao" type="submit" value="Submit">
@@ -114,29 +113,45 @@ if (isset($_POST["sensores"])) {
     <?php 
     
         switch($_POST["sensores"]){
-            case "humidade":
-                echo '
-                <div class="resize-grafico">
-                <canvas class="pie-chart graficos"></canvas>
+            case "portoes":
+                $off = 0;
+                $on = 0;
+                $error = 0;
+
+                $dados = explode(";", $ficheiro, -1);
+                
+                for ($j = 0; $j < count($dados); $j++) {
+                    if($dados[$j] == 0){
+                        $off = $off + 1;
+                    }
+                    elseif($dados[$j] == 1){
+                        $on = $on + 1;
+                    }
+                }
+
+                echo "
+
+                <div class='resize-grafico'>
+                <canvas class='pie-chart graficos'></canvas>
                 </div>
 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js'></script>
             
                 <script>
-                    var ctx = document.getElementsByClassName("pie-chart");
+                    var ctx = document.getElementsByClassName('pie-chart');
             
                  // parametros sao : type, data e options
                  var chartGraph = new Chart(ctx, {
-                     type: "pie",
+                     type: 'pie',
                      data:{
-                         labels: ["Ativado","Desativado","Erro",],
+                         labels: ['Aberto','Fechado',],
                          datasets: [{
-                             label:"HUMIDADE",
-                             data: [200,300,25],
+                             label:'PORTÃO',
+                             data: [$on,$off],
                              backgroundColor: [
-                                "rgb(54, 162, 235)",
-                                "rgb(255, 99, 132)",
-                                "rgb(255, 205, 86)"
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 99, 132)',
+                                'rgb(255, 205, 86)'
                               ],
                          }]
                      },
@@ -145,39 +160,55 @@ if (isset($_POST["sensores"])) {
                          title: {
                              display: true,
                              fontSize: 30,
-                             text: "Humidade"
+                             text: 'Portão'
                          },
                          labels: {
-                             fontStyle: "bold"
+                             fontStyle: 'bold'
                          }
                      }
                  });
             
-                </script>';
+                </script>";
                 break;
-            case "temperatura":
-                echo '
-                <div class="resize-grafico">
-                <canvas class="pie-chart graficos"></canvas>
+            case "movimento":
+                $off = 0;
+                $on = 0;
+                $error = 0;
+
+                $dados = explode(";", $ficheiro, -1);
+                
+                for ($j = 0; $j < count($dados); $j++) {
+                    if($dados[$j] == 0){
+                        $off = $off + 1;
+                    }
+                    elseif($dados[$j] == 1){
+                        $on = $on + 1;
+                    }
+                }
+
+                echo "
+
+                <div class='resize-grafico'>
+                <canvas class='pie-chart graficos'></canvas>
                 </div>
 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js'></script>
             
                 <script>
-                    var ctx = document.getElementsByClassName("pie-chart");
+                    var ctx = document.getElementsByClassName('pie-chart');
             
                  // parametros sao : type, data e options
                  var chartGraph = new Chart(ctx, {
-                     type: "pie",
+                     type: 'pie',
                      data:{
-                         labels: ["Ativado","Desativado","Erro",],
+                         labels: ['Aberto','Fechado',],
                          datasets: [{
-                             label:"HUMIDADE",
-                             data: [200,300,25],
+                             label:'MOVIMENTO',
+                             data: [$on,$off],
                              backgroundColor: [
-                                "rgb(54, 162, 235)",
-                                "rgb(255, 99, 132)",
-                                "rgb(255, 205, 86)"
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 99, 132)',
+                                'rgb(255, 205, 86)'
                               ],
                          }]
                      },
@@ -186,98 +217,73 @@ if (isset($_POST["sensores"])) {
                          title: {
                              display: true,
                              fontSize: 30,
-                             text: "Humidade"
+                             text: 'Sensor de Movimento'
                          },
                          labels: {
-                             fontStyle: "bold"
+                             fontStyle: 'bold'
                          }
                      }
                  });
             
-                </script>';
+                </script>";
                 break;
-                case "balanca":
-                    echo '
-                    <div class="resize-grafico">
-                    <canvas class="pie-chart graficos"></canvas>
-                    </div>
-    
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+                case "luzes":
+                    $off = 0;
+                $on = 0;
+                $error = 0;
+
+                $dados = explode(";", $ficheiro, -1);
                 
-                    <script>
-                        var ctx = document.getElementsByClassName("pie-chart");
-                
-                     // parametros sao : type, data e options
-                     var chartGraph = new Chart(ctx, {
-                         type: "pie",
-                         data:{
-                             labels: ["Ativado","Desativado","Erro",],
-                             datasets: [{
-                                 label:"HUMIDADE",
-                                 data: [200,300,25],
-                                 backgroundColor: [
-                                    "rgb(54, 162, 235)",
-                                    "rgb(255, 99, 132)",
-                                    "rgb(255, 205, 86)"
-                                  ],
-                             }]
+                for ($j = 0; $j < count($dados); $j++) {
+                    if($dados[$j] == 0){
+                        $off = $off + 1;
+                    }
+                    elseif($dados[$j] == 1){
+                        $on = $on + 1;
+                    }
+                }
+
+                echo "
+
+                <div class='resize-grafico'>
+                <canvas class='pie-chart graficos'></canvas>
+                </div>
+
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js'></script>
+            
+                <script>
+                    var ctx = document.getElementsByClassName('pie-chart');
+            
+                 // parametros sao : type, data e options
+                 var chartGraph = new Chart(ctx, {
+                     type: 'pie',
+                     data:{
+                         labels: ['Aberto','Fechado',],
+                         datasets: [{
+                             label:'LUZES',
+                             data: [$on,$off],
+                             backgroundColor: [
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 99, 132)',
+                                'rgb(255, 205, 86)'
+                              ],
+                         }]
+                     },
+                     options: {
+                        maintainAspectRatio: false,
+                         title: {
+                             display: true,
+                             fontSize: 30,
+                             text: 'Luzes'
                          },
-                         options: {
-                            maintainAspectRatio: false,
-                             title: {
-                                 display: true,
-                                 fontSize: 30,
-                                 text: "Humidade"
-                             },
-                             labels: {
-                                 fontStyle: "bold"
-                             }
+                         labels: {
+                             fontStyle: 'bold'
                          }
-                     });
-                
-                    </script>';
+                     }
+                 });
+            
+                </script>";
                     break;
-                    case "luminosidade":
-                        echo '
-                        <div class="resize-grafico">
-                        <canvas class="pie-chart graficos"></canvas>
-                        </div>
-        
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
-                    
-                        <script>
-                            var ctx = document.getElementsByClassName("pie-chart");
-                    
-                         // parametros sao : type, data e options
-                         var chartGraph = new Chart(ctx, {
-                             type: "pie",
-                             data:{
-                                 labels: ["Ativado","Desativado","Erro",],
-                                 datasets: [{
-                                     label:"HUMIDADE",
-                                     data: [200,300,25],
-                                     backgroundColor: [
-                                        "rgb(54, 162, 235)",
-                                        "rgb(255, 99, 132)",
-                                        "rgb(255, 205, 86)"
-                                      ],
-                                 }]
-                             },
-                             options: {
-                                maintainAspectRatio: false,
-                                 title: {
-                                     display: true,
-                                     fontSize: 30,
-                                     text: "Humidade"
-                                 },
-                                 labels: {
-                                     fontStyle: "bold"
-                                 }
-                             }
-                         });
-                    
-                        </script>';
-                        break;
         }
 
     
