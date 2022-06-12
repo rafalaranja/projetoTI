@@ -435,27 +435,6 @@ $nome_coluna = file_get_contents("../api/files/coluna/nome.txt");
                         </div>
                     </div>
                 </div>
-            <div class="row justify-content-center">
-                <div class="col-sm-6 cartao">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="text-center">
-                                <p><b>Webcam</b></p>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="text-center">
-                            <img class="webcam" src="../api/files/webcam/recente/foto_recente.jpg" alt="webcam">
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="text-center">
-                            <p><b><?php echo "Atualização: ".date("F d Y H:i:s.", filemtime("../api/files/webcam/recente/foto_recente.jpg")); ?></b></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
 

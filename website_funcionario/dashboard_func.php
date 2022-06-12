@@ -474,11 +474,10 @@ $nome_coluna = file_get_contents("../api/files/coluna/nome.txt");
                     </div>
                     <div class="card-body">
                     <table class="table">
-                        <thead>
+                    <thead>
                             <tr>
                                 <th scope="col">Porta</th>
-                                <th scope="col">Luzes</th>
-                                <th scope="col">Ar Condicionado</th>
+                                <th scope="col">Música de Fundo</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -492,22 +491,15 @@ $nome_coluna = file_get_contents("../api/files/coluna/nome.txt");
                                     </a>
                                     </td>
                                     <td>
-                                    <a href="eventos_func.php?sensor=luzes&valor=1">
+                                    <a href="eventos_func.php?sensor=musica&valor=1">
                                     <button type="button" class="btn btn-success">Ligar</button>
                                     </a>
-                                    <a href="eventos_func.php?sensor=luzes&valor=0">
-                                    <button type="button" class="btn btn-danger">Desligar</button>
-                                    </a>
-                                    </td>
-                                    <td>
-                                    <a href="eventos_func.php?sensor=ac&valor=1">
-                                    <button type="button" class="btn btn-success">Ligar</button>
-                                    </a>
-                                    <a href="eventos_func.php?sensor=ac&valor=0">
+                                    <a href="eventos_func.php?sensor=musica&valor=0">
                                     <button type="button" class="btn btn-danger">Desligar</button>
                                     </a>
                                     </td>
                                 </tr>
+                            </tbody>
                     </table>                                              
                 </div> 
             </div>                                                   
