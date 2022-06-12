@@ -207,11 +207,14 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                     <div class="card">
                         <div class="card-header">
                             <div class="text-center">
-                                <p><b>Luminosidade: <?php if ($valor_luminosidade > 100 || $valor_luminosidade < 0) {
-                                                        echo "Problema no sensor";
-                                                    } else {
-                                                        echo $valor_luminosidade . "%";
-                                                    }
+                                <p><b>Luminosidade: <?php if ($valor_luminosidade == "0") {
+                                                            echo "Noite";
+                                                        }else if($valor_luminosidade == "1"){
+                                                            echo "Dia";
+                                                        } 
+                                                        else {
+                                                            echo "Problema no sensor";
+                                                        }
                                                     ?></b></p>
                             </div>
                         </div>
@@ -600,17 +603,25 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                             </tr>
                             <tr>
                                 <td>Luminosidade</td>
-                                <td><?php if ($valor_luminosidade > 100 || $valor_luminosidade < 0) {
-                                        echo "Problema no sensor de luz!";
-                                    } else {
-                                        echo $valor_luminosidade . "%";
+                                <td><?php if ($valor_luminosidade == "1") {
+                                        echo "dia";
+                                    } elseif($valor_luminosidade == "0")
+                                    {
+                                        echo "noite";
+                                    } 
+                                    else {
+                                        echo "Problema no sensor de luminosidade";
                                     }
                                     ?></td>
                                 <td><?php echo $hora_luminosidade ?></td>
-                                <td><?php if ($valor_luminosidade > 100 || $valor_luminosidade < 0) {
-                                        echo '<span class="badge rounded-pill bg-warning">ERRO</span>';
+                                <td><?php if ($valor_luminosidade ==  "1" || $valor_luminosidade == "0") {
+                                        if ($valor_luminosidade == "1") {
+                                            echo '<span class="badge rounded-pill bg-info">DIA</span>';
+                                        } else {
+                                            echo '<span class="badge rounded-pill bg-dark">NOITE</span>';
+                                        }
                                     } else {
-                                        echo '<span class="badge rounded-pill bg-success">ATIVO</span>';
+                                        echo '<span class="badge rounded-pill bg-warning">ERRO</span>';
                                     }
 
                                     ?></td>
