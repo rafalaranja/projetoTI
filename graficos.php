@@ -116,7 +116,6 @@ if (isset($_POST["sensores"])) {
             case "portoes":
                 $off = 0;
                 $on = 0;
-                $error = 0;
 
                 $dados = explode(";", $ficheiro, -1);
                 
@@ -173,7 +172,6 @@ if (isset($_POST["sensores"])) {
             case "movimento":
                 $off = 0;
                 $on = 0;
-                $error = 0;
 
                 $dados = explode(";", $ficheiro, -1);
                 
@@ -228,9 +226,8 @@ if (isset($_POST["sensores"])) {
                 </script>";
                 break;
                 case "luzes":
-                    $off = 0;
+                $off = 0;
                 $on = 0;
-                $error = 0;
 
                 $dados = explode(";", $ficheiro, -1);
                 
