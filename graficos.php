@@ -199,7 +199,7 @@ if (isset($_POST["sensores"])) {
                  var chartGraph = new Chart(ctx, {
                      type: 'pie',
                      data:{
-                         labels: ['Aberto','Fechado',],
+                         labels: ['Movimento Detetado','Sem Movimento',],
                          datasets: [{
                              label:'MOVIMENTO',
                              data: [$on,$off],
@@ -255,7 +255,7 @@ if (isset($_POST["sensores"])) {
                  var chartGraph = new Chart(ctx, {
                      type: 'pie',
                      data:{
-                         labels: ['Aberto','Fechado',],
+                         labels: ['Ligadas','Desligadas',],
                          datasets: [{
                              label:'LUZES',
                              data: [$on,$off],
