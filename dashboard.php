@@ -472,6 +472,8 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
             </div>
         </div>
         
+         <!-- Painel de Controlo com botões -->                                                   
+
         <div class="row justify-content-center">
             <div class="col-sm-6 cartao">
                 <div class="card">
@@ -490,16 +492,28 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                             <tbody>
                                 <tr>
                                     <td>
-                                    <button type="button" class="btn btn-success">Abrir</button>
+                                    <a href="eventos.php?sensor=portoes&valor=1">
+                                    <button type="submit" class="btn btn-success">Abrir</button>
+                                    </a>
+                                    <a href="eventos.php?sensor=portoes&valor=0">
                                     <button type="button" class="btn btn-danger">Fechar</button>
+                                    </a>
                                     </td>
                                     <td>
+                                    <a href="eventos.php?sensor=luzes&valor=1">
                                     <button type="button" class="btn btn-success">Ligar</button>
+                                    </a>
+                                    <a href="eventos.php?sensor=luzes&valor=0">
                                     <button type="button" class="btn btn-danger">Desligar</button>
+                                    </a>
                                     </td>
                                     <td>
+                                    <a href="eventos.php?sensor=ac&valor=1">
                                     <button type="button" class="btn btn-success">Ligar</button>
+                                    </a>
+                                    <a href="eventos.php?sensor=ac&valor=0">
                                     <button type="button" class="btn btn-danger">Desligar</button>
+                                    </a>
                                     </td>
                                 </tr>
                     </table>                                              

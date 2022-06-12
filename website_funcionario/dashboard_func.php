@@ -460,6 +460,57 @@ $nome_coluna = file_get_contents("../api/files/coluna/nome.txt");
             </div>
             </div>
         </div>
+        
+        <!-- Painel de Controlo com botões -->                                                   
+
+        <div class="row justify-content-center">
+            <div class="col-sm-6 cartao">
+                <div class="card">
+                    <div class="card-header">
+                        <p><b>Painel de Controlo</b></p>
+                    </div>
+                    <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Porta</th>
+                                <th scope="col">Luzes</th>
+                                <th scope="col">Ar Condicionado</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                    <a href="eventos_func.php?sensor=portoes&valor=1">
+                                    <button type="submit" class="btn btn-success">Abrir</button>
+                                    </a>
+                                    <a href="eventos_func.php?sensor=portoes&valor=0">
+                                    <button type="button" class="btn btn-danger">Fechar</button>
+                                    </a>
+                                    </td>
+                                    <td>
+                                    <a href="eventos_func.php?sensor=luzes&valor=1">
+                                    <button type="button" class="btn btn-success">Ligar</button>
+                                    </a>
+                                    <a href="eventos_func.php?sensor=luzes&valor=0">
+                                    <button type="button" class="btn btn-danger">Desligar</button>
+                                    </a>
+                                    </td>
+                                    <td>
+                                    <a href="eventos_func.php?sensor=ac&valor=1">
+                                    <button type="button" class="btn btn-success">Ligar</button>
+                                    </a>
+                                    <a href="eventos_func.php?sensor=ac&valor=0">
+                                    <button type="button" class="btn btn-danger">Desligar</button>
+                                    </a>
+                                    </td>
+                                </tr>
+                    </table>                                              
+                </div> 
+            </div>                                                   
+        </div>
+
+
 
 
         <!--Tabela com informações atuais dos sensores e respetivo estado-->
