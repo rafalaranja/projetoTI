@@ -5,18 +5,6 @@
 session_start();
 
 
-/* VARIAVEIS LOCAIS PARA LOGIN 
-//criação de variaveis do utilizador
-$username = "paulo";
-$password = "12345";
-$username2 = "fernando";
-$password2 = "12345";
-
-//atribuir à sessão o nome do username
-$_SESSION["username"] = "username";
-$_SESSION["password"] = "password";
-*/
-
 //CONEXAO PELAS VARIAVEIS DA BASE DE DADOS
 include('connection.php');  
    

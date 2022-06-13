@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 header('Content-Type: text/html; charset=utf-8');
 $request = $_SERVER['REQUEST_METHOD'];
 
-
+/* Consoante o tipo de conta logado atualiza a foto de perfil dessa respetiva conta*/
 function guardador_imagem($file) {
     if ($_SESSION['type'] == 1){
         if(move_uploaded_file($file,'imagens/user-foto/funcionario.png')){
@@ -41,27 +41,12 @@ function guardador_imagem($file) {
 if ($request == "POST") {
         if($_FILES['imagem']){
         echo ("ficheiro recebido");
-        //print_r($_FILES);
         echo ("<br>"."Nome da imagem: ".$_FILES["imagem"]["name"]);
         echo("<br>"."Tamanho: ".$_FILES["imagem"]["size"]);
         echo("<br>"."Pasta temporária: ".$_FILES["imagem"]["tmp_name"]."<br>");
         guardador_imagem($_FILES["imagem"]["tmp_name"]);
-       /* if(isset($_FILES['imagem']['size'])) {              // VERIFICA SE A VARIAVEL (IMAGEM) TRAS ALGUMA INFORMAÇÃO
 
-            $arquivo = $_FILES['imagem'];
-    
-            $arquivoNovo = explode('.',$arquivo['name']);
-    
-            /*
-            //Verifica se o arquivo é no formato pretendido (png e jpg)
-            if ($arquivoNovo[sizeof($arquivoNovo)-1] != 'jpg' && $arquivoNovo[sizeof($arquivoNovo)-1] != 'png'){
-                die('O tipo de arquivo inserido não é permitido por favor insira um ficheiro .jpg ou .png');
-    
-            // Verifica se o tamanho não excede o limite pretendido (1000 Kb)
-            }else if($_FILES['imagem']['size'] > 1000000){
-                die('O arquivo inserido tem mais de 1000kB por favor insira outro ficheiro ');
-            }
-            else{*/
+            // Redireciona para a página do perfil consoante o tipo de perfil logado
             if($_SESSION['type'] == 1){
                 header('Location: website_funcionario/perfil_func.php');
             }

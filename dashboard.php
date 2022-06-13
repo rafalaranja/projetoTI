@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])) {
 }
 
 /*Atribuir às variáveis os valores, nomes e horas dos ficheiros*/
-##OLA
+
 
 $valor_temperatura = file_get_contents("api/files/temperatura/valor.txt");
 $hora_temperatura = file_get_contents("api/files/temperatura/hora.txt");
@@ -451,6 +451,9 @@ $nome_coluna = file_get_contents("api/files/coluna/nome.txt");
                         </div>
                     </div>
                 </div>
+
+            <!-- Cartão com foto mais recente da Webcam -->                                    
+
             <div class="row justify-content-center">
                 <div class="col-sm-6 cartao">
                     <div class="card">

@@ -35,8 +35,7 @@ if (isset($_POST["sensores"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartStorage</title>
 </head>
-<!--Refresh automático a cada 5 segundos-->
-<!--<meta http-equiv="refresh" content="5">-->
+
 
 <body>
 
@@ -87,7 +86,7 @@ if (isset($_POST["sensores"])) {
     <div class="main">
     
     
-    <!--Seletor de sensor para visualização do respetivo histórico-->
+    <!--Seletor de sensor para visualização do respetivo gráfico-->
     <form class="form-historico" action="graficos.php" method="post">
             <div class="text-center">
                 <label for="sensores">
@@ -106,16 +105,17 @@ if (isset($_POST["sensores"])) {
 
 
 
-    <!-- GRÁFICO -->
 
 
+    <!-- Código JavaScript para geração do Gráfico -->
+    <!-- Utilizamos uma library de javascript chamada chart.js --> 
 
     <?php 
     
         switch($_POST["sensores"]){
             case "portoes":
-                $off = 0;
-                $on = 0;
+                $off = 0; #Quantidade de vezes que o portão esteve fechado
+                $on = 0; #Quantidade de vezes que o portão esteve aberto
 
                 $dados = explode(";", $ficheiro, -1);
                 
@@ -170,8 +170,8 @@ if (isset($_POST["sensores"])) {
                 </script>";
                 break;
             case "movimento":
-                $off = 0;
-                $on = 0;
+                $off = 0; #Quantidade de vezes que o sensor detetou movimento
+                $on = 0; #Quantidade de vezes que o sesnsor não detetou movimento
 
                 $dados = explode(";", $ficheiro, -1);
                 
@@ -226,8 +226,8 @@ if (isset($_POST["sensores"])) {
                 </script>";
                 break;
                 case "luzes":
-                $off = 0;
-                $on = 0;
+                $off = 0; #Quantidade de vezes que as luzes estiveram desligadas
+                $on = 0; #Quantidade de vezes que as luzes estiveram ligadas
 
                 $dados = explode(";", $ficheiro, -1);
                 

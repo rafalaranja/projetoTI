@@ -52,6 +52,8 @@ if (!isset($_SESSION['username'])) {
 
     <div class="main">
 
+
+        <!-- Caixa que mostra o nome do perfil, tipo de utilizador e foto de perfil -->
         <div class="card card-perfil">
             <div class="row no-gutters">
                 <div class="col-sm-5">
@@ -61,6 +63,7 @@ if (!isset($_SESSION['username'])) {
                     <div class="card-body">
                         <h1 class="card-title"><?php echo $_SESSION["username"] ?></h1><br>
                         <h4>Tipo de conta: </h4><p class="card-text "><?php 
+                        #consoante o tipo de utilizador, printa o respetivo nome do tipo
                         if ($_SESSION['type'] == 2) {
                             echo "Administrador";
                         }else if($_SESSION['type'] == 1){
@@ -68,6 +71,7 @@ if (!isset($_SESSION['username'])) {
                         }else{
                             echo "Cliente";
                         } ?></p>
+                    <!-- Inputs para alterar foto de perfil -->
                     <form action="../upload.php" method="post" enctype="multipart/form-data">
                     <p class="card-text alterar">Alterar foto de perfil:</p>
                     <input type="file" name="imagem" id="imagem" accept=".png, .gif, .jpg, .jpeg">

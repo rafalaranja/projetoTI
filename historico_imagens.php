@@ -69,7 +69,7 @@ if (!isset($_SESSION['username'])) {
     <div class="main">
     <div class="container">
             <div class="row">
-                <!-- -->
+                <!-- Código que gera cartão com fotos de 1 a 15 (o python tem um limitador que a partir da 15 foto começa a gravar por cima)-->
                 <?php 
                     for ($i = 1; $i <= 15; $i++) {
                         echo "<div class='col-sm-4 cartao'>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['username'])) {
                                     <div class='card-footer'>
                                     <div class='text-center'>
                                         <p><b>"; 
-                                        echo "Data: ".date("F d Y H:i:s.", filemtime("api/files/webcam/historico/webcam$i.jpg"));
+                                        echo "Data: ".date("F d Y H:i:s.", filemtime("api/files/webcam/historico/webcam$i.jpg")); #Printa a data em que a foto foi tirada
                                     echo "</b> </p>
                                     </div>
                                 </div>
